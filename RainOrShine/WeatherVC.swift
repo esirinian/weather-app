@@ -83,7 +83,12 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                         let forecast = Forecast(weatherDict: obj)
                         self.forecasts.append(forecast)
                     }
+                    
                     self.forecasts.remove(at: 0)
+                    let x = 8
+                    while x < self.forecasts.count {
+                        self.forecasts.remove(at: x)
+                    }
                     self.tableView.reloadData()
                 }
                 
